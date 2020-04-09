@@ -19,14 +19,10 @@ public class Application {
 //        System.out.println(pointImplCircleOne.getX()); // печатаем коорд Х точки круга1
 //        System.out.println(pointImplCircleOne.getY()); // печатаем коорд У точки круга1
 
-//        Circle circleOne = new Circle(pointImplCircleOne, 23); // конструктор с указанием конкретной точки и вводом значения радиуса
-//        Circle circleOne = new Circle(pointImplCircleOne); // конструктор с указанием конкретной точки и рандомным радиусом
-//        Circle circleOne = new Circle(new PointImpl()); // конструктор с созданием новой точки и рандомным радиусом
-        
-        Circle circleOne = new Circle("circleOne"); // конструктор с встроенным созданием новой точки и рандомным радиусом
-        Circle circleTwo = new Circle("circleTwo");
-        Circle circleThree = new Circle("circleThree");
-        Circle circleFour = new Circle("circleFour");
+        Shape circleOne = new Circle("circleOne", (float) Math.random() * 30, new PointImpl((float) Math.random() * 100, (float) Math.random() * 100));
+        Shape circleTwo = new Circle("circleTwo", (float) Math.random() * 30, new PointImpl((float) Math.random() * 100, (float) Math.random() * 100));
+        Shape circleThree = new Circle("circleThree", (float) Math.random() * 30, new PointImpl((float) Math.random() * 100, (float) Math.random() * 100));
+        Shape circleFour = new Circle("circleFour", (float) Math.random() * 30, new PointImpl((float) Math.random() * 100, (float) Math.random() * 100));
 
 //        System.out.println("circleOne Length = " + circleOne.getLength()); // печатаем длину круга1
 //        System.out.println("circleOne Area = " + circleOne.getArea()); // печатаем площадь круга1
@@ -46,9 +42,9 @@ public class Application {
         
 //        Rectangle rectangleOne = new Rectangle(pointImplRectOneA, pointImplRectOneB); // создаем прямоуг1 с указанием 2х точек
         
-        Rectangle rectangleOne = new Rectangle("rectangleOne"); // конструктор со встроенным созданием точек
-        Rectangle rectangleTwo = new Rectangle("rectangleTwo");
-        Rectangle rectangleThree = new Rectangle("rectangleThree");
+        Shape rectangleOne = new Rectangle("rectangleOne", new PointImpl((float) Math.random() * 100, (float) Math.random() * 100), new PointImpl((float) Math.random() * 100, (float) Math.random() * 100)); 
+        Shape rectangleTwo = new Rectangle("rectangleTwo", new PointImpl((float) Math.random() * 100, (float) Math.random() * 100), new PointImpl((float) Math.random() * 100, (float) Math.random() * 100));
+        Shape rectangleThree = new Rectangle("rectangleThree", new PointImpl((float) Math.random() * 100, (float) Math.random() * 100), new PointImpl((float) Math.random() * 100, (float) Math.random() * 100));
         
 //        System.out.println("RectOne Perimeter = " + rectangleOne.getPerimeter()); // печатаем периметр прямоуг1
 //        System.out.println("RectOne Area = " + rectangleOne.getArea()); // печатаем площадь прямоуг1
@@ -68,9 +64,9 @@ public class Application {
         
 //        Triangle triangleOne = new Triangle(pointImplTriangleOneA, pointImplTriangleOneB, pointImplTriangleOneC); // создаем треуг1
         
-        Triangle triangleOne = new Triangle("triangleOne"); // конструктор со встроенным созданием точек
-        Triangle triangleTwo = new Triangle("triangleTwo");
-        Triangle triangleThree = new Triangle("triangleThree");
+        Shape triangleOne = new Triangle("triangleOne", new PointImpl((float) Math.random() * 100, (float) Math.random() * 100), new PointImpl((float) Math.random() * 100, (float) Math.random() * 100), new PointImpl((float) Math.random() * 100, (float) Math.random() * 100));
+        Shape triangleTwo = new Triangle("triangleTwo", new PointImpl((float) Math.random() * 100, (float) Math.random() * 100), new PointImpl((float) Math.random() * 100, (float) Math.random() * 100), new PointImpl((float) Math.random() * 100, (float) Math.random() * 100));
+        Shape triangleThree = new Triangle("triangleThree", new PointImpl((float) Math.random() * 100, (float) Math.random() * 100), new PointImpl((float) Math.random() * 100, (float) Math.random() * 100), new PointImpl((float) Math.random() * 100, (float) Math.random() * 100));
         
 //        System.out.println("TriangleOne Perimeter = " + triangleOne.getPerimeter());
 //        System.out.println("TriangleOne Area = " + triangleOne.getArea());
@@ -96,18 +92,30 @@ public class Application {
         getLargestShape(shapes);
     }
     
+//    static void getLargestShape (Shape[] shapeArray) {
+//        float largestShapeArea = 0;
+//        int j = 0;
+//        
+//        for (int i = 0; i < shapeArray.length; i++) {
+//            if (largestShapeArea < shapeArray[i].getArea()) {
+//                largestShapeArea = shapeArray[i].getArea();
+//                j = i;
+//            }
+//        }
+//        
+//        System.out.println("The shape with the largest area is: " + shapeArray[j] + ", its area is " + largestShapeArea);
+//    }
+    
     static void getLargestShape (Shape[] shapeArray) {
-        float largestShapeArea = 0;
-        int j = 0;
+        Shape largestShape = shapeArray[0];
         
-        for (int i = 0; i < shapeArray.length; i++) {
-            if (largestShapeArea < shapeArray[i].getArea()) {
-                largestShapeArea = shapeArray[i].getArea();
-                j = i;
+        for (int i = 1; i < shapeArray.length; i++) {
+            if (largestShape.getArea() < shapeArray[i].getArea()) {
+                largestShape = shapeArray[i];
             }
         }
         
-        System.out.println("The shape with the largest area is: " + shapeArray[j] + ", its area is " + shapeArray[j].getArea());
+        System.out.println("The shape with the largest area is: " + largestShape + ", its area is " + largestShape.getArea());
     }
 }
         /*

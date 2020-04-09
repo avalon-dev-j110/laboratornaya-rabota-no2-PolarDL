@@ -14,11 +14,12 @@ public class Circle implements Ellipse {
     private float radius;
     private String circleName;
 
-//    конструктор с указанием конкретной точки и вводом значения радиуса    
-//    public Circle (PointImpl pointImpl, int radius){
-//        this.pointImplCircle = pointImplCircle;
-//        this.radius = radius;
-//    }
+//    конструктор с указанием конкретной точки и вводом значения радиуса и имени круга    
+    public Circle (String circleName, float radius, PointImpl pointImplCircle){
+        this.circleName = circleName;
+        this.radius = radius;
+        this.pointImplCircle = pointImplCircle;
+    }
 
 //  конструктор с указанием конкретной точки рандомным радиусом
 //    public Circle (PointImpl pointImplCircle){
@@ -27,11 +28,11 @@ public class Circle implements Ellipse {
 //    }
 
 //    конструктор с встроенным созданием новой точки и рандомным радиусом        
-    public Circle (String circleName){
-        this.pointImplCircle = new PointImpl();
-        this.radius = (float) Math.random() * 70;
-        this.circleName = circleName;
-    }
+//    public Circle (String circleName, float radius){
+//        this.pointImplCircle = new PointImpl();
+//        this.radius = radius;
+//        this.circleName = circleName;
+//    }
 
     @Override
     public float getLength() {

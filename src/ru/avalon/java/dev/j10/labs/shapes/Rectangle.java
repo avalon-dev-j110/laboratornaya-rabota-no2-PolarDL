@@ -20,19 +20,20 @@ public class Rectangle implements Polygon {
 //    private float bXCoord = pointImplRectangleB.xCoordinate;
 //    private float bYCoord = pointImplRectangleB.yCoordinate;
     
-// конструктор с указанием конкректных точек
-//    public Rectangle (PointImpl pointImplRectangleA, PointImpl pointImplRectangleB) {
-//        this.pointImplRectangleA = pointImplRectangleA;
-//        this.pointImplRectangleB = pointImplRectangleB;
-//    }
+// конструктор с указанием конкректных точек и имени
+    public Rectangle (String rectangleName, PointImpl pointImplRectangleA, PointImpl pointImplRectangleB) {
+        this.rectangleName = rectangleName;
+        this.pointImplRectangleA = pointImplRectangleA;
+        this.pointImplRectangleB = pointImplRectangleB;
+    }
     
     
 // конструктор со встроенным созданием точек
-    public Rectangle (String rectangleName) {
-        this.pointImplRectangleA = new PointImpl();
-        this.pointImplRectangleB = new PointImpl();
-        this.rectangleName = rectangleName;
-    }
+//    public Rectangle (String rectangleName) {
+//        this.pointImplRectangleA = new PointImpl();
+//        this.pointImplRectangleB = new PointImpl();
+//        this.rectangleName = rectangleName;
+//    }
     
     @Override
     public float getPerimeter() {

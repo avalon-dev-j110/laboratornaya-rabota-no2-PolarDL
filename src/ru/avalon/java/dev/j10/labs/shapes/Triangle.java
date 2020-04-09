@@ -28,20 +28,21 @@ public class Triangle implements Polygon {
 //    private float cXCoord = pointImplTriangleC.xCoordinate;
 //    private float cYCoord = pointImplTriangleB.yCoordinate;
     
-// конструктор с указанием конкректных точек
-//    public Triangle (PointImpl pointImplTriangleA, PointImpl pointImplTriangleB, PointImpl pointImplTriangleC){
-//        this.pointImplTriangleA = pointImplTriangleA;
-//        this.pointImplTriangleB = pointImplTriangleB;
-//        this.pointImplTriangleC = pointImplTriangleC;
-//    }
+// конструктор с указанием конкректных точек и имени
+    public Triangle (String triangleName, PointImpl pointImplTriangleA, PointImpl pointImplTriangleB, PointImpl pointImplTriangleC){
+        this.triangleName = triangleName;
+        this.pointImplTriangleA = pointImplTriangleA;
+        this.pointImplTriangleB = pointImplTriangleB;
+        this.pointImplTriangleC = pointImplTriangleC;
+    }
     
 // конструктор со встроенным созданием точек
-    public Triangle (String triangleName){
-        this.pointImplTriangleA = new PointImpl();
-        this.pointImplTriangleB = new PointImpl();
-        this.pointImplTriangleC = new PointImpl();
-        this.triangleName = triangleName;
-    }
+//    public Triangle (String triangleName){
+//        this.pointImplTriangleA = new PointImpl();
+//        this.pointImplTriangleB = new PointImpl();
+//        this.pointImplTriangleC = new PointImpl();
+//        this.triangleName = triangleName;
+//    }
     
     @Override
     public float getPerimeter() {
